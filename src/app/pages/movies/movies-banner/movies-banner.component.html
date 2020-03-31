@@ -1,0 +1,54 @@
+<section class="movies-banner" [class.active]="activeMovie">
+  <video autoplay muted (timeupdate)="time()" #videoBannerEl>
+    <source [src]="movie.mp4" type="video/mp4" />
+    You don't have a support to this feature! Please, upgrade your browser.
+  </video>
+  <div class="text">
+    <h6>{{ movie.title }}</h6>
+    <p>
+      {{ movie.description }}
+    </p>
+    <a [routerLink]="['/player', movie.id]">
+      <svg viewBox="0 0 448 512" class="icon-play">
+        <path
+          fill="currentColor"
+          d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
+        ></path>
+      </svg>
+      Play
+    </a>
+  </div>
+  <div class="controls">
+    <button (click)="replay()" *ngIf="!playing">
+      <svg viewBox="0 0 512 512" class="svg-inline--fa fa-redo fa-w-16">
+        <path
+          fill="currentColor"
+          d="M492 8h-10c-6.627 0-12 5.373-12 12v110.625C426.804 57.047 346.761 7.715 255.207 8.001 118.82 8.428 7.787 120.009 8 256.396 8.214 393.181 119.166 504 256 504c63.926 0 122.202-24.187 166.178-63.908 5.113-4.618 5.354-12.561.482-17.433l-7.069-7.069c-4.503-4.503-11.749-4.714-16.482-.454C361.218 449.238 311.065 470 256 470c-117.744 0-214-95.331-214-214 0-117.744 95.331-214 214-214 82.862 0 154.737 47.077 190.289 116H332c-6.627 0-12 5.373-12 12v10c0 6.627 5.373 12 12 12h160c6.627 0 12-5.373 12-12V20c0-6.627-5.373-12-12-12z"
+        ></path>
+      </svg>
+    </button>
+    <button (click)="unmute()" *ngIf="playing && muted">
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        data-prefix="fas"
+        data-icon="volume-mute"
+        role="img"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 512 512"
+        class="svg-inline--fa fa-volume-mute fa-w-16"
+      >
+        <path
+          fill="currentColor"
+          d="M215.03 71.05L126.06 160H24c-13.26 0-24 10.74-24 24v144c0 13.25 10.74 24 24 24h102.06l88.97 88.95c15.03 15.03 40.97 4.47 40.97-16.97V88.02c0-21.46-25.96-31.98-40.97-16.97zM461.64 256l45.64-45.64c6.3-6.3 6.3-16.52 0-22.82l-22.82-22.82c-6.3-6.3-16.52-6.3-22.82 0L416 210.36l-45.64-45.64c-6.3-6.3-16.52-6.3-22.82 0l-22.82 22.82c-6.3 6.3-6.3 16.52 0 22.82L370.36 256l-45.63 45.63c-6.3 6.3-6.3 16.52 0 22.82l22.82 22.82c6.3 6.3 16.52 6.3 22.82 0L416 301.64l45.64 45.64c6.3 6.3 16.52 6.3 22.82 0l22.82-22.82c6.3-6.3 6.3-16.52 0-22.82L461.64 256z"
+          class=""
+        ></path>
+      </svg>
+    </button>
+    <div class="maturity-rating">
+      <span class="yellow">
+        14
+      </span>
+    </div>
+  </div>
+</section>

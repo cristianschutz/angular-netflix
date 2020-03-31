@@ -1,0 +1,47 @@
+@import "../../../../styles/variables.scss";
+
+.movies-carousel {
+  h6 {
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    margin: 0;
+    text-transform: capitalize;
+
+    small {
+      font-weight: 300;
+      font-size: 11px;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: nowrap;
+    list-style: none;
+    overflow: scroll;
+    margin: -20px -4% -30px;
+    padding: 40px 5px 60px;
+    width: 108%;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    & > li {
+      display: block;
+      width: 320px;
+      min-width: 320px;
+
+      &:first-child {
+        margin-left: calc(4% - 5px);
+      }
+
+      &:last-child {
+        width: 4vw;
+        max-width: 4vw;
+        min-width: 4vw;
+      }
+    }
+  }
+}

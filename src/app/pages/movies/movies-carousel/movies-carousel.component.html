@@ -1,0 +1,12 @@
+<article class="movies-carousel" *ngIf="cat.views > 0">
+  <h6>
+    {{ cat.title }}
+    <small title="Total category views">{{ cat.views || 0 }} views</small>
+  </h6>
+  <ul>
+    <li *ngFor="let movie of cat.movies">
+      <movies-item [movie]="movie"></movies-item>
+    </li>
+    <li></li>
+  </ul>
+</article>

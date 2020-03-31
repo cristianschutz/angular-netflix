@@ -1,0 +1,125 @@
+<div class="modal-entry" [class.active]="!showRegister">
+  <form action="" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h1>Sign In</h1>
+    <label
+      class="form-group"
+      [class.active]="form.value.email"
+      [class.error]="!form.controls.email.valid && form.controls.email.touched"
+    >
+      <input type="text" formControlName="email" />
+      <small>Email or phone number</small>
+      <span class="form-error"
+        >Please enter a valid email or phone number.</span
+      >
+    </label>
+    <div
+      class="form-group"
+      [class.active]="form.value.password"
+      [class.error]="
+        !form.controls.password.valid && form.controls.password.touched
+      "
+    >
+      <label>
+        <input
+          type="{{ showPassword ? 'text' : 'password' }}"
+          formControlName="password"
+        />
+        <small>Senha</small>
+        <span class="form-error">Your password is required.</span>
+      </label>
+      <button
+        (click)="showPass($event)"
+        type="button"
+        *ngIf="form.value.password"
+      >
+        {{ showPassword ? "HIDE" : "SHOW" }}
+      </button>
+    </div>
+    <button class="form-btn" type="submit">
+      Sign In
+    </button>
+    <span class="form-error" *ngIf="error">{{ error }}</span>
+  </form>
+
+  <p>New to Netflix? <a href="#" (click)="showReg($event)">Sign up now</a>.</p>
+</div>
+
+<div class="modal-entry" [class.active]="showRegister">
+  <form action="" [formGroup]="formRegister" (ngSubmit)="onSubmitRegister()">
+    <h1>Sign Up</h1>
+    <label
+      class="form-group"
+      [class.active]="formRegister.value.name"
+      [class.error]="
+        !formRegister.controls.name.valid && formRegister.controls.name.touched
+      "
+    >
+      <input type="text" formControlName="name" />
+      <small>Name</small>
+      <span class="form-error">Your name is required.</span>
+    </label>
+    <label
+      class="form-group"
+      [class.active]="formRegister.value.email"
+      [class.error]="
+        !formRegister.controls.email.valid &&
+        formRegister.controls.email.touched
+      "
+    >
+      <input type="text" formControlName="email" />
+      <small>Email or phone number</small>
+      <span class="form-error">
+        Please enter a valid email or phone number.
+      </span>
+    </label>
+    <div
+      class="form-group"
+      [class.active]="formRegister.value.country"
+      [class.error]="
+        !formRegister.controls.country.valid &&
+        formRegister.controls.country.touched
+      "
+    >
+      <label class="select">
+        <select formControlName="country">
+          <option *ngFor="let country of countries" [value]="country.id">
+            {{ country.name }}
+          </option>
+        </select>
+      </label>
+      <small>Country</small>
+      <span class="form-error">
+        Please select a country.
+      </span>
+    </div>
+    <div
+      class="form-group"
+      [class.active]="formRegister.value.password"
+      [class.error]="
+        !formRegister.controls.password.valid &&
+        formRegister.controls.password.touched
+      "
+    >
+      <label>
+        <input
+          type="{{ showPassword ? 'text' : 'password' }}"
+          formControlName="password"
+        />
+        <small>Senha</small>
+        <span class="form-error">Your password is required.</span>
+      </label>
+      <button (click)="showPass($event)" *ngIf="formRegister.value.password">
+        {{ showPassword ? "HIDE" : "SHOW" }}
+      </button>
+    </div>
+    <button class="form-btn" type="submit">
+      Sign Up
+    </button>
+    <span class="form-error" *ngIf="error">{{ error }}</span>
+  </form>
+
+  <p>
+    Already have an account?
+    <a href="#" (click)="showReg($event)">Sign In now</a>.
+  </p>
+</div>
