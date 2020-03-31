@@ -1,5 +1,5 @@
 <section class="movies-banner" [class.active]="activeMovie">
-  <video autoplay muted (timeupdate)="time()" #videoBannerEl>
+  <video autoplay muted (timeupdate)="time()" (ended)="end()" #videoBannerEl>
     <source [src]="movie.mp4" type="video/mp4" />
     You don't have a support to this feature! Please, upgrade your browser.
   </video>
@@ -46,8 +46,13 @@
       </svg>
     </button>
     <div class="maturity-rating">
-      <span class="yellow">
-        14
+      <span
+        [class.blue]="movie.age === 10"
+        [class.yellow]="movie.age === 12"
+        [class.red]="movie.age === 14"
+        [class.black]="movie.age === 18"
+      >
+        {{ movie.age }}
       </span>
     </div>
   </div>

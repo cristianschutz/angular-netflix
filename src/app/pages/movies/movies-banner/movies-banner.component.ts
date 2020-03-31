@@ -35,8 +35,15 @@ export class MoviesBannerComponent implements OnInit {
   }
 
   unmute() {
-    this.videoplayer.nativeElement.volume = 0.5;
+    this.videoplayer.nativeElement.volume = 0.7;
     this.muted = false;
+  }
+
+  end() {
+    this.videoplayer.nativeElement.currentTime = 0;
+    this.playing = false;
+    this.muted = true;
+    this.activeMovie = false;
   }
 
   time() {

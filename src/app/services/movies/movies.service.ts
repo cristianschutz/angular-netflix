@@ -57,7 +57,8 @@ export class MoviesService {
         description: "Large movie descriptions here",
         synopsis: "A small movies description here.",
         category: 1,
-        mp4: "assets/movies/action-6-underground.mp4",
+        mp4:
+          "https://angular-netflix.s3-sa-east-1.amazonaws.com/action-6-underground.mp4",
         thumb: "assets/thumbs/action-6-underground.jpg",
         relevance: 99,
         age: 18,
@@ -72,7 +73,8 @@ export class MoviesService {
         description: "Large movie descriptions here",
         synopsis: "A small movies description here.",
         category: 1,
-        mp4: "assets/movies/action-marvels-defenreders.mp4",
+        mp4:
+          "https://angular-netflix.s3-sa-east-1.amazonaws.com/action-marvels-defenreders.mp4",
         thumb: "assets/thumbs/action-marvel-defenders.jpg",
         relevance: 20,
         age: 18,
@@ -87,7 +89,8 @@ export class MoviesService {
         description: "Large movie descriptions here",
         synopsis: "A small movies description here.",
         category: 1,
-        mp4: "assets/movies/action-spencer.mp4",
+        mp4:
+          "https://angular-netflix.s3-sa-east-1.amazonaws.com/action-spencer.mp4",
         thumb: "assets/thumbs/action-spencer.jpg",
         relevance: 20,
         age: 18,
@@ -102,7 +105,8 @@ export class MoviesService {
         description: "Large movie descriptions here",
         synopsis: "A small movies description here.",
         category: 1,
-        mp4: "assets/movies/action-triple-frontier.mp4",
+        mp4:
+          "https://angular-netflix.s3-sa-east-1.amazonaws.com/action-triple-frontier.mp4",
         thumb: "assets/thumbs/action-triple-frontier.jpg",
         relevance: 20,
         age: 18,
@@ -117,7 +121,8 @@ export class MoviesService {
         description: "Large movie descriptions here",
         synopsis: "A small movies description here.",
         category: 1,
-        mp4: "assets/movies/action-wu-assasins.mp4",
+        mp4:
+          "https://angular-netflix.s3-sa-east-1.amazonaws.com/action-wu-assasins.mp4",
         thumb: "assets/thumbs/action-wu-assassins.jpg",
         relevance: 20,
         age: 18,
@@ -133,7 +138,8 @@ export class MoviesService {
         description: "Large movie descriptions here",
         synopsis: "A small movies description here.",
         category: 2,
-        mp4: "assets/movies/comedy-blackaf.mp4",
+        mp4:
+          "https://angular-netflix.s3-sa-east-1.amazonaws.com/comedy-blackaf.mp4",
         thumb: "assets/thumbs/comedy-blackaf.webp",
         relevance: 20,
         age: 18,
@@ -148,7 +154,8 @@ export class MoviesService {
         description: "Large movie descriptions here",
         synopsis: "A small movies description here.",
         category: 2,
-        mp4: "assets/movies/comedy-lovejacket.mp4",
+        mp4:
+          "https://angular-netflix.s3-sa-east-1.amazonaws.com/comedy-lovejacket.mp4",
         thumb: "assets/thumbs/comedy-love-jacket.webp",
         relevance: 70,
         age: 18,
@@ -163,7 +170,8 @@ export class MoviesService {
         description: "Large movie descriptions here",
         synopsis: "A small movies description here.",
         category: 2,
-        mp4: "assets/movies/comedy-malibu-rescue.mp4",
+        mp4:
+          "https://angular-netflix.s3-sa-east-1.amazonaws.com/comedy-malibu-rescue.mp4",
         thumb: "assets/thumbs/comedy-malibu-rescue.jpg",
         relevance: 20,
         age: 18,
@@ -178,7 +186,8 @@ export class MoviesService {
         description: "Large movie descriptions here",
         synopsis: "A small movies description here.",
         category: 2,
-        mp4: "assets/movies/comedy-murder-mystery.mp4",
+        mp4:
+          "https://angular-netflix.s3-sa-east-1.amazonaws.com/comedy-murder-mystery.mp4",
         thumb: "assets/thumbs/comedy-murder-mystery.jpg",
         relevance: 55,
         age: 18,
@@ -194,7 +203,8 @@ export class MoviesService {
         description: "Large movie descriptions here",
         synopsis: "A small movies description here.",
         category: 3,
-        mp4: "assets/movies/thriller-a-fall-from-grace.mp4",
+        mp4:
+          "https://angular-netflix.s3-sa-east-1.amazonaws.com/thriller-a-fall-from-grace.mp4",
         thumb: "assets/thumbs/thriller-a-fall-from-grace.jpg",
         relevance: 20,
         age: 18,
@@ -209,7 +219,8 @@ export class MoviesService {
         description: "Large movie descriptions here",
         synopsis: "A small movies description here.",
         category: 3,
-        mp4: "assets/movies/thriller-badla.mp4",
+        mp4:
+          "https://angular-netflix.s3-sa-east-1.amazonaws.com/thriller-badla.mp4",
         thumb: "assets/thumbs/thriller-badla.webp",
         relevance: 34,
         age: 18,
@@ -224,7 +235,8 @@ export class MoviesService {
         description: "Large movie descriptions here",
         synopsis: "A small movies description here.",
         category: 3,
-        mp4: "assets/movies/thriller-bird-box.mp4",
+        mp4:
+          "https://angular-netflix.s3-sa-east-1.amazonaws.com/thriller-bird-box.mp4",
         thumb: "assets/thumbs/thriller-bird-box.jpg",
         relevance: 10,
         age: 18,
@@ -239,7 +251,8 @@ export class MoviesService {
         description: "Large movie descriptions here",
         synopsis: "A small movies description here.",
         category: 3,
-        mp4: "assets/movies/thriller-pandora.mp4",
+        mp4:
+          "https://angular-netflix.s3-sa-east-1.amazonaws.com/thriller-pandora.mp4",
         thumb: "assets/thumbs/thriller-pandora.webp",
         relevance: 20,
         age: 18,
@@ -254,7 +267,8 @@ export class MoviesService {
         description: "Large movie descriptions here",
         synopsis: "A small movies description here.",
         category: 3,
-        mp4: "assets/movies/thriller-the-occupant.mp4",
+        mp4:
+          "https://angular-netflix.s3-sa-east-1.amazonaws.com/thriller-the-occupant.mp4",
         thumb: "assets/thumbs/thriller-the-occupant.jpg",
         relevance: 20,
         age: 18,
@@ -269,7 +283,8 @@ export class MoviesService {
         description: "Large movie descriptions here",
         synopsis: "A small movies description here.",
         category: 3,
-        mp4: "assets/movies/thriller-the-plataform.mp4",
+        mp4:
+          "https://angular-netflix.s3-sa-east-1.amazonaws.com/thriller-the-plataform.mp4",
         thumb: "assets/thumbs/thriller-the-plataform.jpg",
         relevance: 20,
         age: 18,

@@ -13,7 +13,7 @@ export class UsersService {
   countries: any[];
 
   constructor(private router: Router, private authService: AuthService) {
-    this.users = JSON.parse(localStorage.getItem("users")) || [];
+    this.users = this.getAll();
     this.countries = this.getCountries();
   }
 
@@ -25,7 +25,7 @@ export class UsersService {
     return [
       {
         id: "BRA",
-        name: "Brasil"
+        name: "Brazil"
       },
       {
         id: "ARG",
@@ -42,20 +42,36 @@ export class UsersService {
     return this.getCountries().filter(item => id === item.id);
   }
 
-  getAll() {
-    return this.users;
+  getAll(orderByViews: boolean = null) {
+    let usersStorage: Users[] = JSON.parse(localStorage.getItem("users")) || [];
+    usersStorage.map(item => {
+      item.views =
+        JSON.parse(localStorage.getItem(`viewsByUser-${item.id}`)) || [];
+      return item;
+    });
+
+    orderByViews &&
+      usersStorage.sort((a, b) => {
+        if (a.views.length < b.views.length) {
+          return 1;
+        }
+        if (a.views.length > b.views.length) {
+          return -1;
+        }
+        return 0;
+      });
+
+    return usersStorage;
   }
 
   checkUserAlready(email: string, id: number = null) {
     if (id) {
-      console.log("id", id);
       return this.getAll().filter(
         item => email === item.email && id !== item.id
       ).length > 0
         ? true
         : false;
     } else {
-      console.log("noid");
       return this.getAll().filter(item => email === item.email).length > 0
         ? true
         : false;
@@ -75,7 +91,6 @@ export class UsersService {
 
   updateUser(userUpdated) {
     const user = JSON.parse(sessionStorage.getItem("user"));
-    console.log("userUpdated", userUpdated.email, user.id);
     if (this.checkUserAlready(userUpdated.email, user.id)) {
       return false;
     }

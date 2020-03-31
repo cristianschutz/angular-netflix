@@ -46,6 +46,9 @@
       font-size: 14px;
       text-decoration: none;
       padding: 0 10px;
+      cursor: pointer;
+      background: none;
+      border: 0;
     }
 
     ul {
@@ -55,8 +58,11 @@
       align-items: center;
 
       li {
+        button,
         a {
           display: block;
+          cursor: pointer;
+
           &.active {
             font-weight: 700;
           }
@@ -140,12 +146,16 @@
       font-size: 13px;
       font-weight: 700;
 
+      button,
       a {
+        background: none;
+        border: 0;
         color: inherit;
+        display: block;
         font-size: 13px;
         padding: 5px 10px;
-        display: block;
         text-decoration: none;
+        cursor: pointer;
       }
 
       figure {

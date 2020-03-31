@@ -9,7 +9,7 @@
         *ngFor="let usermovie of userMovies"
         [cat]="usermovie"
       ></movies-carousel>
-      <h3>Most Watched by Countries</h3>
+      <h3 *ngIf="countries">Most Watched by Countries</h3>
       <movies-carousel
         *ngFor="let country of countries"
         [cat]="country"

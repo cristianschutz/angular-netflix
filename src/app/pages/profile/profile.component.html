@@ -83,10 +83,11 @@
         </svg>
       </span>
     </label>
-    <button class="form-btn cancel" (click)="cancel($event)">CANCEL</button>
+
     <button class="form-btn" type="submit">
       SAVE
     </button>
+    <button class="form-btn cancel" (click)="cancel($event)">CANCEL</button>
     <span class="form-error" *ngIf="error">{{ error }}</span>
   </form>
 </div>

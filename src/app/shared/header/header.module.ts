@@ -4,8 +4,10 @@ import { RouterModule } from "@angular/router";
 
 import { HeaderComponent } from "./header.component";
 
+import { TopWatchersComponent } from "../../shared/top-watchers/top-watchers.component";
+
 @NgModule({
-  declarations: [HeaderComponent],
+  declarations: [HeaderComponent, TopWatchersComponent],
   imports: [CommonModule, RouterModule],
   exports: [HeaderComponent]
 })

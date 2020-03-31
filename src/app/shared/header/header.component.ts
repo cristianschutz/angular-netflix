@@ -11,10 +11,15 @@ import { Router } from "@angular/router";
 export class HeaderComponent implements OnInit {
   fixMenu: Boolean;
   user: Users;
+  modal: Boolean;
 
   constructor(private router: Router) {
     this.fixMenu = this.router.url === "/profile" ? true : false;
     this.user = JSON.parse(sessionStorage.getItem("user"));
+    this.user.picture =
+      this.user.picture ||
+      "https://avatars.dicebear.com/v2/initials/" + this.user.name + ".svg";
+    this.modal = false;
   }
 
   ngOnInit() {}
@@ -25,5 +30,14 @@ export class HeaderComponent implements OnInit {
     } else {
       this.fixMenu = this.router.url === "/profile" ? true : false;
     }
+  }
+
+  logout() {
+    sessionStorage.removeItem("user");
+    this.router.navigate(["/login"]);
+  }
+
+  toggleTopWatchers() {
+    this.modal = !this.modal;
   }
 }

@@ -5,4 +5,5 @@ export interface Users {
   password: string;
   country: string;
   picture: string;
+  views: [];
 }

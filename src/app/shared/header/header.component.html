@@ -22,6 +22,9 @@
     <ul>
       <li><a [routerLink]="['/movies']">Movies</a></li>
       <li><a routerLink="/movies/most-watched">Most Watched</a></li>
+      <li>
+        <button (click)="toggleTopWatchers()">Top Netflix Watchers</button>
+      </li>
     </ul>
   </nav>
 
@@ -38,8 +41,13 @@
           {{ user.name }}
         </li>
         <li><a routerLink="/profile">Profile</a></li>
-        <li><a href="">Logout</a></li>
+        <li><a (click)="logout()">Logout</a></li>
       </ul>
     </div>
   </div>
 </header>
+
+<share-top-watchers
+  (close)="toggleTopWatchers()"
+  *ngIf="modal"
+></share-top-watchers>

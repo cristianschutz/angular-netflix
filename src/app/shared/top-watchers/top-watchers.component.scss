@@ -1,0 +1,123 @@
+@import "../../../styles/variables.scss";
+
+.modal {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999999;
+
+  .modal-backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    display: block;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .modal-close {
+    background: none;
+    border: 0;
+    color: #fff;
+    padding: 0;
+    position: absolute;
+    right: -20px;
+    top: -30px;
+    width: 20px;
+    z-index: 3;
+  }
+
+  .modal-content {
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    max-width: 400px;
+    opacity: 0;
+    padding: 20px 20px 0;
+    position: relative;
+    transform: scale(0);
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    z-index: 2;
+
+    h6 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      display: block;
+      margin: 0;
+    }
+
+    ul {
+      align-items: center;
+      display: block;
+      list-style: none;
+      padding: 0;
+
+      li {
+        text-align: center;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 120px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+
+        span {
+          color: #fff;
+          display: flex;
+          font-size: 20px;
+          font-weight: 700;
+          align-items: center;
+          margin-right: 15px;
+        }
+
+        svg {
+          display: block;
+          width: 26px;
+          height: 26px;
+          margin: 0 10px 0 10px;
+          color: gold;
+        }
+
+        p {
+          color: #fff;
+          display: block;
+          font-size: 16px;
+          font-weight: 700;
+          text-align: left;
+
+          small {
+            display: block;
+            font-size: 13px;
+            font-weight: 300;
+          }
+        }
+
+        &:last-child {
+          border: 0;
+        }
+      }
+    }
+  }
+
+  &.active {
+    .modal-backdrop {
+      opacity: 1;
+    }
+    .modal-content {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}

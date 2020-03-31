@@ -1,4 +1,4 @@
-<article class="movies-carousel" *ngIf="cat.views > 0">
+<article class="movies-carousel">
   <h6>
     {{ cat.title }}
     <small title="Total category views">{{ cat.views || 0 }} views</small>
@@ -6,6 +6,9 @@
   <ul>
     <li *ngFor="let movie of cat.movies">
       <movies-item [movie]="movie"></movies-item>
+    </li>
+    <li class="nothing" *ngIf="cat.movies">
+      Nothing here yet!
     </li>
     <li></li>
   </ul>
