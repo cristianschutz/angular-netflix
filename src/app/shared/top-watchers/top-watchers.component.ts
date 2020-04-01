@@ -19,7 +19,7 @@ export class TopWatchersComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.init = true;
+    setTimeout(() => (this.init = true), 1000);
   }
 
   closeModal() {

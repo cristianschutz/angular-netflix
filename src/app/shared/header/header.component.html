@@ -18,10 +18,14 @@
     </svg>
   </a>
   <nav>
-    <button>Navigation</button>
-    <ul>
-      <li><a [routerLink]="['/movies']">Movies</a></li>
-      <li><a routerLink="/movies/most-watched">Most Watched</a></li>
+    <button (click)="showMenu()">Browse</button>
+    <ul [class.active]="activeMenu">
+      <li>
+        <a [routerLink]="['/movies']">Movies</a>
+      </li>
+      <li>
+        <a [routerLink]="['/movies', 'most-watched']">Most Watched</a>
+      </li>
       <li>
         <button (click)="toggleTopWatchers()">Top Netflix Watchers</button>
       </li>

@@ -1,24 +1,22 @@
 // vars
-@import "../../../styles/variables.scss";
+@import "../../../../styles/variables.scss";
 
 .modal-entry {
   background-color: rgba(0, 0, 0, 0.75);
   border-radius: 4px;
   display: flex;
   flex-direction: column;
+  left: 50%;
   margin: 0;
   max-width: 450px;
   min-height: 515px;
-  padding: 20px 0 30px;
+  opacity: 0;
   padding: 60px 68px 40px;
-  width: 100%;
   position: absolute;
-  left: 50%;
   top: -50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
-  opacity: 0;
   transition: all 0.3s ease-in-out;
+  width: 100%;
 
   h1 {
     color: #fff;
@@ -45,5 +43,25 @@
   &.active {
     top: 50%;
     opacity: 1;
+    z-index: 2;
+  }
+
+  @media (max-width: 768px) {
+    top: 0;
+    transform: none;
+    left: 0;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+
+    form {
+      width: 100%;
+      max-width: 300px;
+    }
+
+    &.active {
+      top: 0;
+    }
   }
 }

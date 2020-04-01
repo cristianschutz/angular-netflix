@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
   fixMenu: Boolean;
   user: Users;
   modal: Boolean;
+  activeMenu: Boolean = false;
 
   constructor(private router: Router) {
     this.fixMenu = this.router.url === "/profile" ? true : false;
@@ -32,12 +33,17 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  showMenu() {
+    this.activeMenu = !this.activeMenu;
+  }
+
   logout() {
     sessionStorage.removeItem("user");
     this.router.navigate(["/login"]);
   }
 
   toggleTopWatchers() {
+    this.showMenu();
     this.modal = !this.modal;
   }
 }

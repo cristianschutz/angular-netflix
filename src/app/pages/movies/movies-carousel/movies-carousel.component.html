@@ -7,7 +7,7 @@
     <li *ngFor="let movie of cat.movies">
       <movies-item [movie]="movie"></movies-item>
     </li>
-    <li class="nothing" *ngIf="cat.movies">
+    <li class="nothing" *ngIf="!cat.movies">
       Nothing here yet!
     </li>
     <li></li>

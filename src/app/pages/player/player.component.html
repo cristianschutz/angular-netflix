@@ -17,7 +17,10 @@
   </video>
   <div class="controls">
     <span class="controls-timeline" #timelineEl (click)="timelineSet($event)">
-      <span [style.width]="timePosition * 100 + '%'"></span>
+      <span
+        [style.width]="timePosition * 100 + '%'"
+        class="timePosition"
+      ></span>
     </span>
 
     <button *ngIf="!playing" (click)="play()">
@@ -68,7 +71,7 @@
       </svg>
     </button>
     <p>
-      {{ movie.title }} - <small>{{ movie.synopsis }}</small>
+      {{ movie.title }}<small> - {{ movie.synopsis }}</small>
     </p>
   </div>
 </section>

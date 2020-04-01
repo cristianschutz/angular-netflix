@@ -15,6 +15,7 @@ export class PlayerComponent implements OnInit {
   totalVol: boolean;
   playing: boolean;
   timePosition: number;
+  timePositionBackdrop: number;
   id: number;
   movie: any;
 
@@ -92,7 +93,7 @@ export class PlayerComponent implements OnInit {
   }
 
   timelineSet(e) {
-    let percentVideo = (e.screenX / e.srcElement.offsetWidth) * 100;
+    let percentVideo = (e.offsetX / e.srcElement.offsetWidth) * 100;
 
     this.videoplayer.nativeElement.currentTime =
       (this.videoplayer.nativeElement.duration * percentVideo) / 100;

@@ -6,16 +6,20 @@
   video {
     position: absolute;
     z-index: 0;
-    top: 0px;
-    left: 0px;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    max-width: 100%;
+    width: 100vw;
+    height: 100vh;
   }
 
-  &:hover {
+  // &:hover {
+  .page-player-back {
+    opacity: 1;
+  }
+  .controls {
+    bottom: 0;
+  }
+  // }
+
+  @media (max-width: 768px) {
     .page-player-back {
       opacity: 1;
     }
@@ -74,7 +78,7 @@
 
 .controls {
   background: rgba(0, 0, 0, 0.5);
-  bottom: -80px;
+  bottom: -85px;
   transition: all 0.3s ease-in-out;
   display: flex;
   flex-wrap: wrap;
@@ -82,7 +86,7 @@
   position: absolute;
   width: 100%;
   align-items: center;
-  padding: 20px 15px 0 0;
+  padding: 25px 15px 0 0;
   z-index: 3;
 
   button {
@@ -134,6 +138,14 @@
 
     small {
       font-weight: 300;
+    }
+  }
+
+  @media (max-width: 768px) {
+    p {
+      small {
+        display: none;
+      }
     }
   }
 }
@@ -194,7 +206,7 @@
     top: 16px;
     span {
       &:after {
-        top: -3px;
+        top: -2px;
       }
     }
   }

@@ -137,7 +137,9 @@
       opacity: 1;
     }
     .movies-item--wrapper {
-      transform: scale(1.4);
+      @media (min-width: 768px) {
+        transform: scale(1.4);
+      }
 
       .movies-item--infos {
         bottom: 0;

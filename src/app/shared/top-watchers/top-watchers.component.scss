@@ -120,4 +120,15 @@
       opacity: 1;
     }
   }
+
+  @media (max-width: 768px) {
+    .modal-content {
+      background-color: rgba(0, 0, 0, 0.9);
+      margin: 0 4%;
+    }
+
+    .modal-close {
+      right: 10px;
+    }
+  }
 }
