@@ -27,7 +27,6 @@ export class AuthService {
   }
 
   getCurrentUser() {
-    console.log(JSON.parse(sessionStorage.getItem("user"))[0]);
     return JSON.parse(sessionStorage.getItem("user"));
   }
 }

@@ -53,7 +53,6 @@ export class ModalEntryComponent implements OnInit {
 
   showPass(e) {
     this.showPassword = !this.showPassword;
-    console.log(e);
     e.preventDefault();
   }
 
@@ -69,7 +68,6 @@ export class ModalEntryComponent implements OnInit {
       const login = this.authService.login(this.form.value);
       if (login) {
         this.router.navigate(["/movies"]);
-        console.log("nav to movier");
       } else {
         this.error = "Invalid Email or Password!";
       }
@@ -104,7 +102,6 @@ export class ModalEntryComponent implements OnInit {
     this.form.valueChanges.subscribe(val => {
       this.error = "";
     });
-    console.log(this.formRegister);
     this.formRegister.valueChanges.subscribe(val => {
       this.error = "";
     });

@@ -1,7 +1,7 @@
 .movies-banner {
   background-color: #000;
   width: 100%;
-  height: 70vh;
+  height: 76vh;
   z-index: 0;
   position: relative;
   overflow: hidden;
@@ -37,6 +37,7 @@
       width: 100%;
       font-size: 50px;
       transition: all 0.3s ease-in-out;
+      margin: 0;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
     }
 
@@ -48,7 +49,7 @@
       font-size: 20px;
       transition: all 0.3s ease-in-out;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
-      margin-top: 20px;
+      margin-top: 15px;
     }
 
     a {
@@ -194,15 +195,12 @@
 
   &.active {
     .text {
-      transform: none;
-      top: auto;
-      bottom: 190px;
-
       h6 {
         font-size: 30px;
       }
 
       p {
+        margin-top: 5px;
         font-size: 16px;
       }
 
@@ -233,6 +231,7 @@
       transform: none;
       top: auto;
       bottom: 20px;
+      margin-top: 0;
 
       h6 {
         font-size: 24px;

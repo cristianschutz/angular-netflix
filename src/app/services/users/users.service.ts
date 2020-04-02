@@ -89,18 +89,22 @@ export class UsersService {
     }
   }
 
-  updateUser(userUpdated) {
+  updateUser(userUpdated: Users) {
     const user = JSON.parse(sessionStorage.getItem("user"));
     if (this.checkUserAlready(userUpdated.email, user.id)) {
       return false;
     }
 
-    const newusers = this.users.map(item => {
+    let newusers = this.users.map(item => {
       if (item.id === user.id) {
-        userUpdated.id = user.id;
-        sessionStorage.setItem("user", JSON.stringify(userUpdated));
-        return userUpdated;
+        item.name = userUpdated.name;
+        item.email = userUpdated.email;
+        item.country = userUpdated.country;
+        item.password = userUpdated.password;
+        item.picture = userUpdated.picture;
+        sessionStorage.setItem("user", JSON.stringify(item));
       }
+      return item;
     });
     localStorage.setItem("users", JSON.stringify(newusers));
     return true;

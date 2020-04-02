@@ -17,7 +17,8 @@ export class MoviesBannerComponent implements OnInit {
   constructor(private moviesService: MoviesService) {}
 
   ngOnInit() {
-    this.movie = this.moviesService.getMovies(true)[0];
+    const rand = Math.floor(Math.random() * 10);
+    this.movie = this.moviesService.getMovies(true)[rand];
   }
 
   ngAfterViewInit() {

@@ -60,7 +60,6 @@ export class ProfileComponent implements OnInit {
 
   showPass(e) {
     this.showPassword = !this.showPassword;
-    console.log(e);
     e.preventDefault();
   }
 

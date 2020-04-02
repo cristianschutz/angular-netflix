@@ -3,13 +3,13 @@
     {{ cat.title }}
     <small title="Total category views">{{ cat.views || 0 }} views</small>
   </h6>
-  <ul>
+  <ul *ngIf="cat.movies.length > 0">
     <li *ngFor="let movie of cat.movies">
       <movies-item [movie]="movie"></movies-item>
     </li>
-    <li class="nothing" *ngIf="!cat.movies">
-      Nothing here yet!
-    </li>
     <li></li>
   </ul>
+  <span class="movies-carousel-empty" *ngIf="cat.movies.length == 0">
+    Nothing here yet!
+  </span>
 </article>
