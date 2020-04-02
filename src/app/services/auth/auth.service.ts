@@ -1,8 +1,8 @@
-import { Injectable } from "@angular/core";
-import { Users } from "../users/users.interface";
+import { Injectable } from '@angular/core';
+import { Users } from '../users/users.interface';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class AuthService {
   user: Users;
@@ -10,12 +10,12 @@ export class AuthService {
   constructor() {}
 
   login(user) {
-    const allUsers = JSON.parse(localStorage.getItem("users"));
+    const allUsers = JSON.parse(localStorage.getItem('users'));
     const userLogin = allUsers.find(
       item => user.email === item.email && user.password === item.password
     );
     if (userLogin) {
-      sessionStorage.setItem("user", JSON.stringify(userLogin));
+      sessionStorage.setItem('user', JSON.stringify(userLogin));
       return true;
     } else {
       return false;
@@ -23,10 +23,10 @@ export class AuthService {
   }
 
   isAuth() {
-    return sessionStorage.getItem("user") ? true : false;
+    return sessionStorage.getItem('user') ? true : false;
   }
 
   getCurrentUser() {
-    return JSON.parse(sessionStorage.getItem("user"));
+    return JSON.parse(sessionStorage.getItem('user'));
   }
 }

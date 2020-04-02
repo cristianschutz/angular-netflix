@@ -1,25 +1,19 @@
-import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-import { Users } from "../../services/users/users.interface";
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Users } from '../../services/users/users.interface';
 
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-  FormControl,
-  FormArray
-} from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { UsersService } from "../../services/users/users.service";
+import { UsersService } from '../../services/users/users.service';
 
 @Component({
-  selector: "page-profile",
-  templateUrl: "./profile.component.html",
-  styleUrls: ["./profile.component.scss"]
+  selector: 'app-page-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
   form: FormGroup;
-  showPassword: Boolean;
+  showPassword: boolean;
   error: string;
   countries: any[];
   user: Users;
@@ -31,9 +25,9 @@ export class ProfileComponent implements OnInit {
     private router: Router
   ) {
     this.showPassword = false;
-    this.error = "";
+    this.error = '';
     this.countries = this.usersService.getCountries();
-    this.user = JSON.parse(sessionStorage.getItem("user"));
+    this.user = JSON.parse(sessionStorage.getItem('user'));
   }
 
   ngOnInit() {
@@ -41,20 +35,19 @@ export class ProfileComponent implements OnInit {
       name: [this.user.name, [Validators.required]],
       email: [this.user.email, [Validators.required, Validators.email]],
       country: [this.user.country, [Validators.required]],
-      password: [this.user.password, [Validators.required]],
-      picture: [this.base64textString, []]
+      password: [this.user.password, [Validators.required]]
     });
     this.base64textString =
       this.user.picture ||
-      "https://avatars.dicebear.com/v2/initials/" +
+      'https://avatars.dicebear.com/v2/initials/' +
         this.form.value.name +
-        ".svg";
+        '.svg';
     this.onChanges();
   }
 
   onChanges(): void {
     this.form.valueChanges.subscribe(val => {
-      this.error = "";
+      this.error = '';
     });
   }
 
@@ -75,7 +68,7 @@ export class ProfileComponent implements OnInit {
   }
 
   handleReaderLoaded(e) {
-    this.base64textString = "data:image/png;base64," + btoa(e.target.result);
+    this.base64textString = 'data:image/png;base64,' + btoa(e.target.result);
   }
 
   onSubmit() {
@@ -83,9 +76,9 @@ export class ProfileComponent implements OnInit {
       this.form.value.picture = this.base64textString;
       const updated: any = this.usersService.updateUser(this.form.value);
       if (updated) {
-        this.router.navigate(["/movies"]);
+        this.router.navigate(['/movies']);
       } else {
-        this.error = "Already have an user with this email!";
+        this.error = 'Already have an user with this email!';
       }
     } else {
       Object.keys(this.form.controls).forEach(field => {
@@ -98,6 +91,5 @@ export class ProfileComponent implements OnInit {
 
   cancel(e) {
     e.preventDefault();
-    // this.location.back();
   }
 }

@@ -1,12 +1,12 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
-import { MoviesService } from "../../services/movies/movies.service";
-import { ActivatedRoute } from "@angular/router";
+import { MoviesService } from '../../services/movies/movies.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: "page-movies",
-  templateUrl: "./movies.component.html",
-  styleUrls: ["./movies.component.scss"]
+  selector: 'app-page-movies',
+  templateUrl: './movies.component.html',
+  styleUrls: ['./movies.component.scss']
 })
 export class MoviesComponent implements OnInit {
   categories: any[];

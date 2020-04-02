@@ -1,16 +1,22 @@
-import { Component, OnInit, Output, EventEmitter } from "@angular/core";
-import { UsersService } from "../../services/users/users.service";
-import { Users } from "../../services/users/users.interface";
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
+  Output,
+  EventEmitter
+} from '@angular/core';
+import { UsersService } from '../../services/users/users.service';
+import { Users } from '../../services/users/users.interface';
 
 @Component({
-  selector: "share-top-watchers",
-  templateUrl: "./top-watchers.component.html",
-  styleUrls: ["./top-watchers.component.scss"]
+  selector: 'app-share-top-watchers',
+  templateUrl: './top-watchers.component.html',
+  styleUrls: ['./top-watchers.component.scss']
 })
-export class TopWatchersComponent implements OnInit {
-  @Output() close = new EventEmitter();
+export class TopWatchersComponent implements OnInit, AfterViewInit {
   users: Users[];
-  init: boolean = false;
+  init = false;
+  @Output() closed = new EventEmitter<boolean>();
 
   constructor(private usersService: UsersService) {}
 
@@ -23,7 +29,7 @@ export class TopWatchersComponent implements OnInit {
   }
 
   closeModal() {
-    this.close.emit(true);
+    this.closed.emit(true);
   }
 
   moviesCount(views) {

@@ -1,16 +1,16 @@
-import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
-import { MoviesService } from "../../services/movies/movies.service";
-import { AuthService } from "../../services/auth/auth.service";
-import { ActivatedRoute } from "@angular/router";
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { MoviesService } from '../../services/movies/movies.service';
+import { AuthService } from '../../services/auth/auth.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: "app-player",
-  templateUrl: "./player.component.html",
-  styleUrls: ["./player.component.scss"]
+  selector: 'app-page-player',
+  templateUrl: './player.component.html',
+  styleUrls: ['./player.component.scss']
 })
 export class PlayerComponent implements OnInit {
-  @ViewChild("videoEl") videoplayer: ElementRef;
-  @ViewChild("timelineEl") timelineEl: ElementRef<HTMLSpanElement>;
+  @ViewChild('videoEl') videoplayer: ElementRef;
+  @ViewChild('timelineEl') timelineEl: ElementRef<HTMLSpanElement>;
   mute: boolean;
   totalVol: boolean;
   playing: boolean;
@@ -24,7 +24,7 @@ export class PlayerComponent implements OnInit {
     private route: ActivatedRoute,
     private authService: AuthService
   ) {
-    this.id = parseInt(this.route.snapshot.params["id"]);
+    this.id = parseInt(this.route.snapshot.params.id, 10);
     this.movie = this.moviesService.getMovie(this.id);
   }
 
@@ -93,7 +93,7 @@ export class PlayerComponent implements OnInit {
   }
 
   timelineSet(e) {
-    let percentVideo = (e.offsetX / e.srcElement.offsetWidth) * 100;
+    const percentVideo = (e.offsetX / e.srcElement.offsetWidth) * 100;
 
     this.videoplayer.nativeElement.currentTime =
       (this.videoplayer.nativeElement.duration * percentVideo) / 100;

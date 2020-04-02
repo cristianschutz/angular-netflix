@@ -1,26 +1,26 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
   Validators,
   FormControl,
   FormArray
-} from "@angular/forms";
+} from '@angular/forms';
 
-import { UsersService } from "../../../services/users/users.service";
-import { AuthService } from "src/app/services/auth/auth.service";
-import { Router } from "@angular/router";
+import { UsersService } from '../../../services/users/users.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: "shared-modal-entry",
-  templateUrl: "./modal-entry.component.html",
-  styleUrls: ["./modal-entry.component.scss"]
+  selector: 'app-shared-modal-entry',
+  templateUrl: './modal-entry.component.html',
+  styleUrls: ['./modal-entry.component.scss']
 })
 export class ModalEntryComponent implements OnInit {
   form: FormGroup;
   formRegister: FormGroup;
-  showPassword: Boolean;
-  showRegister: Boolean;
+  showPassword: boolean;
+  showRegister: boolean;
   error: string;
   countries: any[];
 
@@ -32,7 +32,7 @@ export class ModalEntryComponent implements OnInit {
   ) {
     this.showPassword = false;
     this.showRegister = false;
-    this.error = "";
+    this.error = '';
     this.countries = this.user.getCountries();
   }
 
@@ -58,7 +58,7 @@ export class ModalEntryComponent implements OnInit {
 
   showReg(e) {
     this.showRegister = !this.showRegister;
-    this.error = "";
+    this.error = '';
     e.preventDefault();
   }
 
@@ -67,9 +67,9 @@ export class ModalEntryComponent implements OnInit {
       this.user.setUser(this.form.value);
       const login = this.authService.login(this.form.value);
       if (login) {
-        this.router.navigate(["/movies"]);
+        this.router.navigate(['/movies']);
       } else {
-        this.error = "Invalid Email or Password!";
+        this.error = 'Invalid Email or Password!';
       }
     } else {
       Object.keys(this.form.controls).forEach(field => {
@@ -85,9 +85,9 @@ export class ModalEntryComponent implements OnInit {
       this.user.setUser(this.formRegister.value);
       const addUser = this.user.addUser();
       if (addUser) {
-        this.router.navigate(["/movies"]);
+        this.router.navigate(['/movies']);
       } else {
-        this.error = "Already have an user with this email!";
+        this.error = 'Already have an user with this email!';
       }
     } else {
       Object.keys(this.formRegister.controls).forEach(field => {
@@ -100,10 +100,10 @@ export class ModalEntryComponent implements OnInit {
 
   onChanges(): void {
     this.form.valueChanges.subscribe(val => {
-      this.error = "";
+      this.error = '';
     });
     this.formRegister.valueChanges.subscribe(val => {
-      this.error = "";
+      this.error = '';
     });
   }
 }

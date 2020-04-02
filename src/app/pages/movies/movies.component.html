@@ -1,27 +1,27 @@
-<shared-header></shared-header>
+<app-shared-header></app-shared-header>
 <div class="page-movies-bg">
-  <movies-banner></movies-banner>
+  <app-movies-banner></app-movies-banner>
 
   <section class="page page-movies">
     <div *ngIf="mostWatched">
       <h3>My Last Watched Movies</h3>
-      <movies-carousel
+      <app-movies-carousel
         *ngFor="let usermovie of userMovies"
         [cat]="usermovie"
-      ></movies-carousel>
+      ></app-movies-carousel>
       <h3>Most Watched by Countries</h3>
-      <movies-carousel
+      <app-movies-carousel
         *ngFor="let country of countries"
         [cat]="country"
-      ></movies-carousel>
+      ></app-movies-carousel>
       <h3>Most Watched by Categories</h3>
     </div>
 
-    <movies-carousel
+    <app-movies-carousel
       *ngFor="let cat of categories"
       [cat]="cat"
-    ></movies-carousel>
+    ></app-movies-carousel>
   </section>
 
-  <shared-footer></shared-footer>
+  <app-shared-footer></app-shared-footer>
 </div>

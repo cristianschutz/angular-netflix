@@ -1,7 +1,7 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { ModalEntryComponent } from "./modal-entry.component";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalEntryComponent } from './modal-entry.component';
 
 @NgModule({
   declarations: [ModalEntryComponent],

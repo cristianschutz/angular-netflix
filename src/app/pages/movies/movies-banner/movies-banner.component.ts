@@ -1,18 +1,24 @@
-import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
-import { MoviesService } from "../../../services/movies/movies.service";
-import { MovieInterface } from "../../../services/movies/movies.interface";
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
+  ViewChild,
+  ElementRef
+} from '@angular/core';
+import { MoviesService } from '../../../services/movies/movies.service';
+import { MovieInterface } from '../../../services/movies/movies.interface';
 
 @Component({
-  selector: "movies-banner",
-  templateUrl: "./movies-banner.component.html",
-  styleUrls: ["./movies-banner.component.scss"]
+  selector: 'app-movies-banner',
+  templateUrl: './movies-banner.component.html',
+  styleUrls: ['./movies-banner.component.scss']
 })
-export class MoviesBannerComponent implements OnInit {
-  @ViewChild("videoBannerEl") videoplayer: ElementRef;
-  playing: boolean = true;
-  muted: boolean = true;
+export class MoviesBannerComponent implements OnInit, AfterViewInit {
+  @ViewChild('videoBannerEl') videoplayer: ElementRef;
+  playing = true;
+  muted = true;
   movie: MovieInterface;
-  activeMovie: boolean = false;
+  activeMovie = false;
 
   constructor(private moviesService: MoviesService) {}
 

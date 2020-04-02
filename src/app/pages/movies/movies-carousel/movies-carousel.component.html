@@ -5,7 +5,7 @@
   </h6>
   <ul *ngIf="cat.movies.length > 0">
     <li *ngFor="let movie of cat.movies">
-      <movies-item [movie]="movie"></movies-item>
+      <app-movies-item [movie]="movie"></app-movies-item>
     </li>
     <li></li>
   </ul>

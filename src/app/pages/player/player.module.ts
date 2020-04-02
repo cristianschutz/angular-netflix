@@ -1,8 +1,8 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import { PlayerRoutingModule } from "./player-routing.module";
-import { PlayerComponent } from "./player.component";
+import { PlayerRoutingModule } from './player-routing.module';
+import { PlayerComponent } from './player.component';
 
 @NgModule({
   declarations: [PlayerComponent],
