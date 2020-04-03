@@ -3,7 +3,7 @@ import { MovieInterface, CategoryInterface } from './movies.interface';
 import { UsersService } from '../users/users.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MoviesService {
   constructor(private usersService: UsersService) {
@@ -16,20 +16,20 @@ export class MoviesService {
         id: 1,
         title: 'Action',
         views: parseInt(localStorage.getItem(`viewsCategory-1`), 10),
-        movies: this.getMoviesByCategory(1)
+        movies: this.getMoviesByCategory(1),
       },
       {
         id: 2,
         title: 'Comedy',
         views: parseInt(localStorage.getItem(`viewsCategory-2`), 10),
-        movies: this.getMoviesByCategory(2)
+        movies: this.getMoviesByCategory(2),
       },
       {
         id: 3,
         title: 'Thriller',
         views: parseInt(localStorage.getItem(`viewsCategory-3`), 10),
-        movies: this.getMoviesByCategory(3)
-      }
+        movies: this.getMoviesByCategory(3),
+      },
     ];
     return mostWatched
       ? categories.sort((a, b) => {
@@ -45,7 +45,7 @@ export class MoviesService {
   }
 
   getCategory(id: number) {
-    return this.getCategories().find(item => item.id === id);
+    return this.getCategories().find((item) => item.id === id);
   }
 
   getMovies(mostWatched: boolean = false) {
@@ -65,11 +65,11 @@ export class MoviesService {
         views: parseInt(localStorage.getItem(`viewsMovie-1`), 10),
         viewsByCountry: JSON.parse(
           localStorage.getItem(`viewsMovieByCountry-1`)
-        ) || [{ countryID: '', views: 0 }]
+        ) || [{ countryID: '', views: 0 }],
       },
       {
         id: 2,
-        title: 'Marvel\'s Defender\'s',
+        title: "Marvel's Defender's",
         description: 'Large movie descriptions here',
         synopsis: 'A small movies description here.',
         category: 1,
@@ -81,7 +81,7 @@ export class MoviesService {
         views: parseInt(localStorage.getItem(`viewsMovie-2`), 10),
         viewsByCountry: JSON.parse(
           localStorage.getItem(`viewsMovieByCountry-2`)
-        ) || [{ countryID: '', views: 0 }]
+        ) || [{ countryID: '', views: 0 }],
       },
       {
         id: 3,
@@ -97,7 +97,7 @@ export class MoviesService {
         views: parseInt(localStorage.getItem(`viewsMovie-3`), 10),
         viewsByCountry: JSON.parse(
           localStorage.getItem(`viewsMovieByCountry-3`)
-        ) || [{ countryID: '', views: 0 }]
+        ) || [{ countryID: '', views: 0 }],
       },
       {
         id: 4,
@@ -113,7 +113,7 @@ export class MoviesService {
         views: parseInt(localStorage.getItem(`viewsMovie-4`), 10),
         viewsByCountry: JSON.parse(
           localStorage.getItem(`viewsMovieByCountry-4`)
-        ) || [{ countryID: '', views: 0 }]
+        ) || [{ countryID: '', views: 0 }],
       },
       {
         id: 5,
@@ -129,7 +129,7 @@ export class MoviesService {
         views: parseInt(localStorage.getItem(`viewsMovie-5`), 10),
         viewsByCountry: JSON.parse(
           localStorage.getItem(`viewsMovieByCountry-5`)
-        ) || [{ countryID: '', views: 0 }]
+        ) || [{ countryID: '', views: 0 }],
       },
       // comedy
       {
@@ -146,7 +146,7 @@ export class MoviesService {
         views: parseInt(localStorage.getItem(`viewsMovie-6`), 10),
         viewsByCountry: JSON.parse(
           localStorage.getItem(`viewsMovieByCountry-6`)
-        ) || [{ countryID: '', views: 0 }]
+        ) || [{ countryID: '', views: 0 }],
       },
       {
         id: 7,
@@ -162,7 +162,7 @@ export class MoviesService {
         views: parseInt(localStorage.getItem(`viewsMovie-7`), 10),
         viewsByCountry: JSON.parse(
           localStorage.getItem(`viewsMovieByCountry-7`)
-        ) || [{ countryID: '', views: 0 }]
+        ) || [{ countryID: '', views: 0 }],
       },
       {
         id: 8,
@@ -178,7 +178,7 @@ export class MoviesService {
         views: parseInt(localStorage.getItem(`viewsMovie-8`), 10),
         viewsByCountry: JSON.parse(
           localStorage.getItem(`viewsMovieByCountry-8`)
-        ) || [{ countryID: '', views: 0 }]
+        ) || [{ countryID: '', views: 0 }],
       },
       {
         id: 9,
@@ -194,7 +194,7 @@ export class MoviesService {
         views: parseInt(localStorage.getItem(`viewsMovie-9`), 10),
         viewsByCountry: JSON.parse(
           localStorage.getItem(`viewsMovieByCountry-9`)
-        ) || [{ countryID: '', views: 0 }]
+        ) || [{ countryID: '', views: 0 }],
       },
       // thriller
       {
@@ -211,7 +211,7 @@ export class MoviesService {
         views: parseInt(localStorage.getItem(`viewsMovie-10`), 10),
         viewsByCountry: JSON.parse(
           localStorage.getItem(`viewsMovieByCountry-10`)
-        ) || [{ countryID: '', views: 0 }]
+        ) || [{ countryID: '', views: 0 }],
       },
       {
         id: 11,
@@ -227,7 +227,7 @@ export class MoviesService {
         views: parseInt(localStorage.getItem(`viewsMovie-11`), 10),
         viewsByCountry: JSON.parse(
           localStorage.getItem(`viewsMovieByCountry-11`)
-        ) || [{ countryID: '', views: 0 }]
+        ) || [{ countryID: '', views: 0 }],
       },
       {
         id: 12,
@@ -243,7 +243,7 @@ export class MoviesService {
         views: parseInt(localStorage.getItem(`viewsMovie-12`), 10),
         viewsByCountry: JSON.parse(
           localStorage.getItem(`viewsMovieByCountry-12`)
-        ) || [{ countryID: '', views: 0 }]
+        ) || [{ countryID: '', views: 0 }],
       },
       {
         id: 13,
@@ -259,7 +259,7 @@ export class MoviesService {
         views: parseInt(localStorage.getItem(`viewsMovie-13`), 10),
         viewsByCountry: JSON.parse(
           localStorage.getItem(`viewsMovieByCountry-13`)
-        ) || [{ countryID: '', views: 0 }]
+        ) || [{ countryID: '', views: 0 }],
       },
       {
         id: 14,
@@ -275,7 +275,7 @@ export class MoviesService {
         views: parseInt(localStorage.getItem(`viewsMovie-13`), 10),
         viewsByCountry: JSON.parse(
           localStorage.getItem(`viewsMovieByCountry-13`)
-        ) || [{ countryID: '', views: 0 }]
+        ) || [{ countryID: '', views: 0 }],
       },
       {
         id: 15,
@@ -291,8 +291,8 @@ export class MoviesService {
         views: parseInt(localStorage.getItem(`viewsMovie-13`), 10),
         viewsByCountry: JSON.parse(
           localStorage.getItem(`viewsMovieByCountry-13`)
-        ) || [{ countryID: '', views: 0 }]
-      }
+        ) || [{ countryID: '', views: 0 }],
+      },
     ];
     return mostWatched
       ? movies.sort((a, b) => {
@@ -307,21 +307,21 @@ export class MoviesService {
       : movies;
   }
 
-  geMoviesByUsersViews() {
-    const users = this.usersService.getUsers();
-    // users.map(item=>)
-  }
+  // geMoviesByUsersViews() {
+  //   const users = this.usersService.getUsers();
+  //   // users.map(item=>)
+  // }
 
   getCountriesByViews() {
     const countriesMovies = [];
     const countries = this.usersService.getCountries();
-    const newCountriesArray = countries.map(country => {
+    const newCountriesArray = countries.map((country) => {
       // sum all views of country in movies
       let totalViews = 0;
-      this.getMovies().map(movie => {
+      this.getMovies().map((movie) => {
         if (movie.viewsByCountry) {
           const { views } = movie.viewsByCountry.find(
-            movieCountry => movieCountry.countryID === country.id
+            (movieCountry) => movieCountry.countryID === country.id
           ) || { views: 0 };
           totalViews = totalViews + views;
         }
@@ -332,7 +332,7 @@ export class MoviesService {
         id: country.id,
         title: country.name,
         views: totalViews,
-        movies: this.getMoviesByCountry(country.id)
+        movies: this.getMoviesByCountry(country.id),
       };
     });
     //
@@ -348,8 +348,8 @@ export class MoviesService {
   }
 
   getMoviesByCountry(id: string) {
-    return this.getMovies().filter(movie =>
-      movie.viewsByCountry.find(movieCountry => movieCountry.countryID === id)
+    return this.getMovies().filter((movie) =>
+      movie.viewsByCountry.find((movieCountry) => movieCountry.countryID === id)
     );
   }
 
@@ -358,7 +358,7 @@ export class MoviesService {
     const moviesID =
       JSON.parse(localStorage.getItem(`viewsByUser-${user.id}`)) || [];
 
-    const movies = moviesID.map(id => {
+    const movies = moviesID.map((id) => {
       return this.getMovie(id);
     });
 
@@ -367,17 +367,19 @@ export class MoviesService {
         id: user.id,
         title: user.name,
         views: movies.length,
-        movies
-      }
+        movies,
+      },
     ];
   }
 
   getMovie(id: number) {
-    return this.getMovies().find(item => item.id === id);
+    return this.getMovies().find((item) => item.id === id);
   }
 
   getMoviesByCategory(category: number, mostWatched: boolean = false) {
-    const movies = this.getMovies().filter(item => item.category === category);
+    const movies = this.getMovies().filter(
+      (item) => item.category === category
+    );
     return mostWatched
       ? movies.sort((a, b) => {
           if (a.views < b.views) {
@@ -417,7 +419,7 @@ export class MoviesService {
 
     const haveCountry =
       viewsByCountry.length > 0 &&
-      viewsByCountry.find(item => item.countryID === countryID);
+      viewsByCountry.find((item) => item.countryID === countryID);
 
     // check if array is empty
     // make a array with user country
@@ -427,8 +429,8 @@ export class MoviesService {
         JSON.stringify([
           {
             countryID,
-            views: 1
-          }
+            views: 1,
+          },
         ])
       );
       return true;
@@ -439,7 +441,7 @@ export class MoviesService {
     if (viewsByCountry.length > 0 && !haveCountry) {
       viewsByCountry.push({
         countryID,
-        views: 1
+        views: 1,
       });
       localStorage.setItem(
         `viewsMovieByCountry-${movieID}`,
@@ -451,7 +453,7 @@ export class MoviesService {
     // check if array is not empty and country is already pushed
     // count new views to existing country in array
     if (viewsByCountry.length > 0 && haveCountry) {
-      viewsByCountry.map(item => {
+      viewsByCountry.map((item) => {
         if (item.countryID === countryID) {
           item.views = item.views + 1;
         }

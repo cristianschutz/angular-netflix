@@ -5,7 +5,7 @@ import { AuthService } from '../auth/auth.service';
 import { Users } from './users.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UsersService {
   email: string;
@@ -26,27 +26,27 @@ export class UsersService {
     return [
       {
         id: 'BRA',
-        name: 'Brazil'
+        name: 'Brazil',
       },
       {
         id: 'ARG',
-        name: 'Argentina'
+        name: 'Argentina',
       },
       {
         id: 'USA',
-        name: 'United States'
-      }
+        name: 'United States',
+      },
     ];
   }
 
   getCountry(id: string) {
-    return this.getCountries().filter(item => id === item.id);
+    return this.getCountries().filter((item) => id === item.id);
   }
 
   getAll(orderByViews: boolean = false) {
     const usersStorage: Users[] =
       JSON.parse(localStorage.getItem('users')) || [];
-    usersStorage.map(item => {
+    usersStorage.map((item) => {
       item.views =
         JSON.parse(localStorage.getItem(`viewsByUser-${item.id}`)) || [];
       return item;
@@ -69,12 +69,12 @@ export class UsersService {
   checkUserAlready(email: string, id: number = null) {
     if (id) {
       return this.getAll().filter(
-        item => email === item.email && id !== item.id
+        (item) => email === item.email && id !== item.id
       ).length > 0
         ? true
         : false;
     } else {
-      return this.getAll().filter(item => email === item.email).length > 0
+      return this.getAll().filter((item) => email === item.email).length > 0
         ? true
         : false;
     }
@@ -97,7 +97,7 @@ export class UsersService {
       return false;
     }
 
-    const newusers = this.users.map(item => {
+    const newusers = this.users.map((item) => {
       if (item.id === user.id) {
         item.name = userUpdated.name;
         item.email = userUpdated.email;
