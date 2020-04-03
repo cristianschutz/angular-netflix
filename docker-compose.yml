@@ -1,0 +1,8 @@
+version: "2.1"
+
+services:
+  netflix:
+    image: netflix
+    build: .
+    ports:
+      - 8081:80
