@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentation Angular Netflix</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <style>
+      .bd-toc-link {
+        color: rgba(0, 0, 0, 0.65);
+        display: block;
+        font-weight: 600;
+        padding: 0.25rem 1.5rem;
+      }
+
+      .bd-sidebar .nav {
+        display: block;
+      }
+
+      .bd-sidebar .nav > li > a {
+        color: rgba(0, 0, 0, 0.65);
+        display: block;
+        font-size: 90%;
+        padding: 0.25rem 1.5rem;
+      }
+    </style>
+  </head>
+  <body class="pt-5 pb-5">
+    <div class="container-fluid">
+      <h2 class="text-center pb-5">Overview Documentation - Angular Netflix</h2>
+      <div class="row d-flex">
+        <div
+          class="col-md-3 col-xl-2 bd-sidebar"
+          style="position: fixed; left: 0;top: 120px;"
+        >
+          <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+            <div class="bd-toc-item active">
+              <a class="bd-toc-link" href="#introduction">
+                Introduction
+              </a>
+
+              <a class="bd-toc-link pt-3" href="#folder-structure">
+                Folder Structure
+              </a>
+
+              <a class="bd-toc-link pt-3" href="#routers">
+                Routers
+              </a>
+
+              <a class="bd-toc-link pt-3" href="#page-modules">
+                Page Modules
+              </a>
+
+              <ul class="nav bd-sidenav">
+                <li class="active bd-sidenav-active">
+                  <a href="#page-module-login">
+                    Login
+                  </a>
+                </li>
+                <li>
+                  <a href="#page-module-movies">
+                    Movies
+                  </a>
+                </li>
+                <li>
+                  <a href="#page-module-player">
+                    Player
+                  </a>
+                </li>
+                <li>
+                  <a href="#page-module-profile">
+                    Profile
+                  </a>
+                </li>
+              </ul>
+
+              <a class="bd-toc-link pt-3" href="#shared-modules">
+                Shared Modules / Components
+              </a>
+              <ul class="nav bd-sidenav">
+                <li class="active bd-sidenav-active">
+                  <a href="#shared-header">
+                    Header
+                  </a>
+                </li>
+                <li>
+                  <a href="#shared-footer">
+                    Footer
+                  </a>
+                </li>
+                <li>
+                  <a href="#shared-top-watchers">
+                    Top Watchers
+                  </a>
+                </li>
+              </ul>
+
+              <a class="bd-toc-link pt-3" href="#services">
+                Services
+              </a>
+              <ul class="nav bd-sidenav">
+                <li class="active bd-sidenav-active">
+                  <a href="#services-auth">
+                    Auth
+                  </a>
+                </li>
+                <li>
+                  <a href="#services-movies">
+                    Movies
+                  </a>
+                </li>
+                <li>
+                  <a href="#services-users">
+                    Users
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="col-md-9 bd-content offset-3">
+          <article id="introduction" class="mb-5 pb-5">
+            <h1 class="bd-title" id="content">Introduction</h1>
+            <p class="bd-lead">
+              This project basically consists of 4 main pages (Login, Movies,
+              Player, Profile), being its content where the user can
+              respectively (Log in / Register, See the list of movies, see the
+              list of movies by views, edit your registration ). All data
+              relating to the films are fixed in the code, all data relating to
+              views, user registration are being saved in the localStorage of
+              the browser
+            </p>
+          </article>
+
+          <article id="folder-structure" class="mb-5 pb-5">
+            <h2>
+              <span class="bd-content-title">
+                Folder Structure
+              </span>
+            </h2>
+            <p>The structure and content of the main project folders:</p>
+            <p>
+              <strong>app</strong><br />
+              The files in this folder are the main files that call the modules,
+              organized as routes and components.
+            </p>
+            <p>
+              <strong>app/pages</strong><br />
+              Here are all the modules that are loaded in the routes, and that
+              are not shared or included in other modules, each folder
+              corresponds to an application route, example: Inside each folder
+              is the main module, which is called on the route, and sub modules
+              and components used on the page
+            </p>
+            <ul>
+              <li class="mb-2">
+                <strong class="text-nowrap bd-highlight">/pages/login</strong>
+                <ul>
+                  <li>/pages/login/modal-entry</li>
+                </ul>
+              </li>
+              <li class="mb-2">
+                <strong class="text-nowrap bd-highlight">/pages/movies</strong>
+                <ul>
+                  <li>/pages/movies/movies-banner</li>
+                  <li>/pages/movies/movies-carouse</li>
+                  <li>/pages/movies/movies-item</li>
+                </ul>
+              </li>
+              <li class="mb-2">
+                <strong class="text-nowrap bd-highlight">/pages/player</strong>
+              </li>
+              <li class="mb-2">
+                <strong class="text-nowrap bd-highlight">/pages/profile</strong>
+              </li>
+            </ul>
+            <p>
+              <strong>app/services</strong><br />
+              In services everything is related to content, and is shared
+              globally, all components can use them to obtain data such as
+              users, movies, login etc.<br />
+              Here is also the authentication and guards, to check the login
+              before each route call
+            </p>
+            <p>
+              <strong>app/shared</strong><br />
+              Na pasta Shared está todos os componentes ou modulos que podem ser
+              usados em qualquer pagina dá aplicação, eles possuem um escopo
+              global
+            </p>
+          </article>
+
+          <article id="routers" class="mb-5 pb-5">
+            <h2>
+              <span class="bd-content-title">
+                Routers
+              </span>
+            </h2>
+            <p>
+              As we are talking about loading videos, i chose to make
+              asynchronous routing, the lazy load format, which allows the
+              module set on the route to be loaded only when necessary.<br />
+              This feature has several benefits such as:<br />
+              - You can load feature areas only when requested by the user.<br />
+              - You can speed up load time for users that only visit certain
+              areas of the application.<br />
+              - You can continue expanding lazy loaded feature areas without
+              increasing the size of the initial load bundle.<br />
+              All the main ones are configured in the file
+              <strong>src/app/app-routing.module.ts</strong>
+            </p>
+          </article>
+
+          <article id="page-modules" class="mb-5 pb-5">
+            <h2>
+              <span class="bd-content-title">
+                Page Modules
+              </span>
+            </h2>
+            <p>
+              Each page is a module with a main component, its route file (if
+              any) and its child components, imported into the main
+              component.<br />
+            </p>
+
+            <h6><strong>pages/login</strong></h6>
+            <p>
+              This module basically calls a component called modal-entry, which
+              has all the login and user registration logic.
+              <strong>modal-entry.component</strong> call the user service,
+              where is the relationship with localStorage and auth service where
+              is all the relationship with the sessionStorage and authentication
+              logic's.<br /><br />
+            </p>
+
+            <h6><strong>pages/movies</strong></h6>
+            <p>
+              This module has three components that make the entire visual part
+              of the video listing page, and is also called in the most-whatched
+              route, which orders videos by number of views. Below is the
+              details of the components:
+            </p>
+            <p class="pl-5">
+              <u>pages/movies/movies-banner</u><br />
+              This is the video player shown first on the page, it basically
+              searches for the videos ordered by most viewed, and randomly
+              selects one to display and run as a highlight. The player has
+              mute, unmute, and replay controls when the video ends. It
+              basically searches for the videos ordered by most viewed, and
+              randomly selects one to display and run as a highlight. The player
+              has mute, unmute, and replay controls when the video ends. Also,
+              has another function that add an active class when the movie
+              arrive at 7 seconds, it's make the title decrease, enabling a
+              better visualization.
+            </p>
+            <p class="pl-5">
+              <u>pages/movies/movies-carousel</u><br />
+              it's show a list of movies by category, country or user, this
+              component receive a array of movies and send to another component
+              calls movie-item, has control there.
+            </p>
+            <p class="pl-5">
+              <u>pages/movies/movies-item</u><br />
+              This component receive a movie object and put the infos in html,
+              the video is placed in a video html tag and all the controls like
+              play and pause, that hapend by methods of this class.<br /><br />
+            </p>
+
+            <h6><strong>pages/player</strong></h6>
+            <p>
+              Player module has a component calls
+              <strong>player.component.js</strong> that receive the id of movie,
+              and find the movie by this id in services/movies, where all movies
+              is. player.component.js control the video and has all the
+              events.<br /><br />
+            </p>
+
+            <h6><strong>pages/profile</strong></h6>
+            <p>
+              This module has a component calls
+              <strong>profile.component.js</strong> his control the form that
+              update the profile of user, like name, email, password and
+              picture.
+            </p>
+          </article>
+
+          <article id="shared-modules" class="mb-5 pb-5">
+            <h2>
+              <span class="bd-content-title">
+                Shared Modules / Components
+              </span>
+            </h2>
+
+            <h6 id="shared-header"><strong>shared/header</strong></h6>
+            <p>
+              This is the module declare a component calls header.component.ts
+              that contains a navigation routes, and profile and logout links,
+              also imports the top-watchers module, to show top 3 users who seen
+              more movies.
+            </p>
+
+            <h6 id="shared-footer"><strong>shared/footer</strong></h6>
+            <p>
+              This is the module declare a component calls footer.component.ts
+              that contains some netflix links
+            </p>
+
+            <h6 id="shared-top-watchers">
+              <strong>shared/top-watchers</strong>
+            </h6>
+            <p>
+              This component find the top 3 users who seen more movies in the
+              app.
+            </p>
+          </article>
+
+          <article id="services" class="mb-5 pb-5">
+            <h2>
+              <span class="bd-content-title">
+                Services
+              </span>
+            </h2>
+            <p>
+              In this application i used the singleton service content where a
+              single instance of the services is done in every app.
+            </p>
+            <p>
+              As one of the requirements was not to use backend, so, i created 4
+              services, movies, users, auth, guard, all the content is
+              controlled by them, they have part of the fixed content in the
+              cod, and some things saved in localStorage, to give a dynamics of
+              backend using only frontend code
+            </p>
+            <p id="services-auth"><strong>services/auth</strong><br /></p>
+            <ul>
+              <li>
+                <u>Methods:</u>
+                <p>- login()<br /></p>
+                <p>- isAuth()<br /></p>
+                <p>- getCurrentUser()<br /></p>
+              </li>
+            </ul>
+
+            <p id="services-movies"><strong>services/movies</strong><br /></p>
+            <ul>
+              <li>
+                <u>Methods:</u>
+                <p>- getCategories()<br /></p>
+                <p>- getCategory()<br /></p>
+                <p>- getMovies()<br /></p>
+                <p>- geMoviesByUsersViews()<br /></p>
+                <p>- getCountriesByViews()<br /></p>
+                <p>- getMoviesByCountry()<br /></p>
+                <p>- getMoviesByUser()<br /></p>
+                <p>- getMovie()<br /></p>
+                <p>- setViews()<br /></p>
+              </li>
+            </ul>
+
+            <p id="services-users"><strong>services/users</strong><br /></p>
+            <ul>
+              <li>
+                <u>Methods:</u>
+                <p>- getUsers()<br /></p>
+                <p>- getCountries()<br /></p>
+                <p>- getCountry()<br /></p>
+                <p>- getAll()<br /></p>
+                <p>- checkUserAlready()<br /></p>
+                <p>- addUser()<br /></p>
+                <p>- updateUser()<br /></p>
+                <p>- setUser()<br /></p>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
